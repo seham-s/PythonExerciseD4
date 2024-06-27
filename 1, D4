@@ -1,0 +1,31 @@
+class Car:
+    # Class attribute to count the number of cars created
+    car_count = 0
+
+    def __init__(self, color, brand, year, price):
+        # Instance attributes
+        self.color = color
+        self.brand = brand
+        self.year = year
+        self.price = price
+        
+        # Increment the car count every time a new car is created
+        Car.car_count += 1
+
+    @classmethod
+    def get_car_count(cls):
+        # Class method to return the number of cars created
+        return cls.car_count
+
+    @staticmethod
+    def car_info():
+        # Static method to return information about what a car is
+        return "A car is a road vehicle, typically with four wheels, powered by an internal combustion engine or electric motor and able to carry a small number of people."
+
+# Example of using the Car class
+if __name__ == "__main__":
+    car1 = Car("Red", "Toyota", 2020, 20000)
+    car2 = Car("Blue", "Ford", 2018, 15000)
+    
+    print("Number of cars created:", Car.get_car_count())
+    print(Car.car_info())
